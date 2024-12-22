@@ -126,7 +126,7 @@ function PickRandomPackage(Trolly)
 	--Pick random prop to use
 	randPackage = searchProps[math.random(1, #searchProps)]
 	SetEntityDrawOutline(randPackage, true)
-	SetEntityDrawOutlineColor(0, 255, 0, 1.0)
+	SetEntityDrawOutlineColor(table.unpack(Config.Colors.primary))
 	SetEntityDrawOutlineShader(1)
 	--Generate Target Location on the selected package
 	Targets["Package"] =
@@ -182,7 +182,7 @@ end)
 
 RegisterNetEvent("jim-recycle:PickupPackage:Start", function(data) local Ped = PlayerPedId()
 	TaskStartScenarioInPlace(Ped, "CODE_HUMAN_MEDIC_KNEEL", 0, true)
-	if progressBar({label = Loc[Config.Lan].progressbar["search"], time = 5000, cancel = true, icon = "fas fa-magnifying-glass"}) then
+	if progressBar({label = Loc[Config.Lan].progressbar["search"], time = Config.searchBoxTime, cancel = true, icon = "fas fa-magnifying-glass"}) then
 		ClearPedTasksImmediately(Ped)
 		TriggerEvent("jim-recycle:PickupPackage:Hold", data)
 	end
@@ -203,7 +203,7 @@ RegisterNetEvent("jim-recycle:PickupPackage:Hold", function(data) local Ped = Pl
 
 	--Create target for drop off location
 	SetEntityDrawOutline(TrollyProp, true)
-	SetEntityDrawOutlineColor(150, 1, 1, 1.0)
+	SetEntityDrawOutlineColor(table.unpack(Config.Colors.secondary))
 	SetEntityDrawOutlineShader(1)
 
 	Targets["DropOff"] =

@@ -2,7 +2,7 @@ print("^2Jim^7-^2Recycle ^7v^42^7.^47^7.^42 ^7- ^2Recycling Script by ^1Jimathy^
 
 Config = {
 	Debug = false, -- Toggle Debug Mode
-	Lan = "en",
+	Lan = "ka",
 
 	img = "qb-inventory/html/images/", -- Set this to your inventory
 
@@ -159,7 +159,14 @@ Config = {
 			{ amount = 100, itemGive = 6, Min = 5, Max = 14, },
 			{ amount = 1000, itemGive = 8, Min = 10, Max = 28, },
 		},
-	}
+	},
+
+	Colors = {
+        primary = {255, 114, 0, 0.8},
+        secondary = {0, 45, 255, 0.8},
+    },
+
+		searchBoxTime = 0
 }
 
 Loc = {}
